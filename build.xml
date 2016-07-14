@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="copy atg assets" default="copyFiles" basedir=".">
+    <!--
+Please change the sourceDir and the targetDir according to your paths
+-->
+
+<property name="sourceDir" value="D:/Commerce/ATG11.2/dwell_store"/>
+<property name="targetDir" value="D:/Commerce/Oracle/Middleware/Oracle_Home/user_projects/domains/base_domain/servers/dwell_production/stage/dwell_production.ear/dwell_production.ear"/> 
+<target name='copyFiles'>
+        <echo message="Start Copying ----" />
+        <copy todir="${targetDir}/dwell-web.war">
+            <fileset dir="${sourceDir}/j2ee-apps/dwell-J2EE/dwell-web.war"/>
+        </copy>
+       <!-- <copy todir="${targetDir}/dwelldocroot.war">
+            <fileset dir="${sourceDir}/j2ee-apps/dwell-J2EE/dwelldocroot.war"/>
+        </copy>-->
+
+        <copy todir="${targetDir}/atglib/_mystore_slib">
+            <fileset dir="${sourceDir}/lib"/>
+        </copy>
+        <echo message="Finish copying -----"/>
+
+    </target>
+
+
+</project> 
+
+
+
+<!-- @version $Id: //product/Eclipse/version/10.2/plugins/atg.project/templates/build.xml#1 $$Change: 735822 $ -->

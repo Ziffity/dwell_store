@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+ATG-Config-Path: config/
+ATG-Required: DAS DPS DSS DCS DCS.Endeca.Index.SKUIndexing DAF.Endeca.Assembler 
+ATG-J2EE: j2ee-apps/dwell-J2EE
+ATG-EAR-Module: j2ee-apps/dwell-J2EE
+ATG-Class-Path: lib
+ATG-Web-Module: j2ee-apps/dwell-J2EE/dwell-web.war
+ATG-Client-Class-Path: lib

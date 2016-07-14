@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+
+<gsa-template>
+
+  <header>
+    <name>Dwell ProductCatalog</name>
+   
+  </header>
+  <item-descriptor name="sku" xml-combine="append">
+  <table name="dwellSku" id-column-name="id" type="auxiliary">
+  <property expert="true" queryable="true" readable="true" writable="true" cache-mode="inherit" category-resource="categoryInfo" name="color" column-name="color" data-type="string"/>
+  </table>
+  </item-descriptor>
+  
+  <item-descriptor name="product" xml-combine="append">
+  <table name="dwellProduct" id-column-name="id" type="auxiliary">
+  <property expert="true" queryable="true" readable="true" writable="true" cache-mode="inherit" category-resource="categoryProductSkus" name="DefaultSKU" column-name="DefaultSKU" item-type="sku">
+  <attribute name="propertySortPriority" value="-2"/>
+   </property>
+  </table>
+  </item-descriptor>
+  
+  </gsa-template>

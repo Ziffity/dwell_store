@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="{APP-NAME}" default="build.ear">
+
+<target name="build.war">
+
+ 	<war destfile="D:\Commerce\ATG11.2\dwell_store/j2ee-apps/dwell-web.war" update="true" webxml="D:\Commerce\ATG11.2\dwell_store/j2ee-apps/dwell-J2EE/dwell-web.war/WEB-INF/web.xml">
+	<fileset dir="D:\Commerce\ATG11.2\dwell_store/j2ee-apps/dwell-J2EE/dwell-web.war">
+		<include name="**/*"/>
+		<exclude name="WEB-INF/web.xml"/>
+	</fileset>
+	</war>
+	<!--<place-holder-for-war-task/>-->
+ </target>
+
+<target name="build.ear" depends="build.war">
+  <ear destfile="D:\Commerce\ATG11.2\dwell_store/j2ee-apps/dwell-J2EE.ear" appxml="D:\Commerce\ATG11.2\dwell_store/j2ee-apps/dwell-J2EE/META-INF/application.xml">
+    <metainf dir="D:\Commerce\ATG11.2\dwell_store/j2ee-apps/dwell-J2EE/META-INF" includes="DYNAMO-INF/**/*"/>
+    <fileset dir="D:\Commerce\ATG11.2\dwell_store/j2ee-apps" includes="*.war,*.jar"/>
+  </ear>
+</target>
+</project>
+<!-- @version $Id: //product/Eclipse/version/11.2/plugins/atg.project/templates/build.xml#1 $$Change: 946917 $ -->
